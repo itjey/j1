@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J1 – Bidirectional AI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
+      color: #f2f2f2;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #000000, #1a1a1a);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff3cac;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(120deg, #ff3cac, #784ba0, #2b86c5);
+      background-size: 300% 300%;
+      animation: gradientShift 10s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    section {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .features, .use-cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .chat-demo {
+      background: #111;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .chat-message {
+      margin-bottom: 20px;
+      display: flex;
+    }
+    .chat-message.user .bubble {
+      background: #2b86c5;
+      align-self: flex-start;
+    }
+    .chat-message.j1 .bubble {
+      background: #784ba0;
+      align-self: flex-end;
+    }
+    .bubble {
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 80%;
+      color: white;
+      animation: pop 0.4s ease;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    footer {
+      background: #000;
+      color: #777;
+      padding: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">J1 AI</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#demo">Demo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>J1 – Dual-Path Reasoning AI</h1>
+    <p>The first open locally-run model to combine forward and backward thinking into one revolutionary convergent intelligence engine.</p>
+  </section>
+
+  <section id="about">
+    <h2>About J1</h2>
+    <p>J1 is not just another LLM – it's a bidirectional reasoning model. Inspired by how humans verify ideas, J1 reasons forward from a question and backward from a hypothetical answer, converging in the middle to maximize confidence in its solutions.</p>
+  </section>
+
+  <section id="features" class="features">
+    <div class="card">
+      <h3>Bidirectional Reasoning</h3>
+      <p>Forward and backward chains validate each other's logic, like two minds agreeing from different angles.</p>
+    </div>
+    <div class="card">
+      <h3>Locally Run</h3>
+      <p>No cloud. Full speed and privacy – J1 runs on your machine with full control.</p>
+    </div>
+    <div class="card">
+      <h3>Convergent Thought</h3>
+      <p>J1 detects when multiple chains reach the same intermediate step, boosting confidence in correctness.</p>
+    </div>
+    <div class="card">
+      <h3>Dual Verification</h3>
+      <p>Every solution is checked in both directions to minimize hallucinations and maximize reliability.</p>
+    </div>
+  </section>
+
+  <section id="usecases" class="use-cases">
+    <div class="card">
+      <h3>Math Problem Solving</h3>
+      <p>Finds an answer forward, checks it backward. Mistakes don't slip through.</p>
+    </div>
+    <div class="card">
+      <h3>Proof Verification</h3>
+      <p>J1 can confirm the validity of steps in formal logic or deduction tasks by reconstructing the problem backwards.</p>
+    </div>
+    <div class="card">
+      <h3>Planning Tasks</h3>
+      <p>Start-to-goal planning enhanced by reverse-checking goal feasibility. Useful in puzzles, games, or logistics.</p>
+    </div>
+    <div class="card">
+      <h3>Advanced Chat</h3>
+      <p>General chatbot abilities enhanced by deeper verification. Ask questions, get smart and validated replies.</p>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2>Chat Demo</h2>
+    <div class="chat-demo">
+      <div class="chat-message user">
+        <div class="bubble">Hey J1, what’s 12 x 13?</div>
+      </div>
+      <div class="chat-message j1">
+        <div class="bubble">Forward chain says 156. Backward check: 156 ÷ 12 = 13. Confirmed.</div>
+      </div>
+      <div class="chat-message user">
+        <div class="bubble">Nice. What kind of model are you?</div>
+      </div>
+      <div class="chat-message j1">
+        <div class="bubble">I'm a locally-run dualpath reasoning model. I solve and verify every step I make.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get Involved</h2>
+    <p>J1 is just getting started. Help us improve it. Suggest features, contribute code, or join the vision to create the next-gen reasoning AI.</p>
+  </section>
+
+  <footer>
+    <p>Made by rebels. Powered by convergence. © 2025 J1 Project</p>
+  </footer>
+
+  <script>
+    // More animations or logic hooks can be added here later
+  </script>
+</body>
+</html>
